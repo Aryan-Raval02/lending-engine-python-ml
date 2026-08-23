@@ -11,7 +11,7 @@ app = FastAPI(
 # Include REST routes
 app.include_router(router)
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health_check():
     return {"status": "up", "service": "ai-risk-engine"}
 
