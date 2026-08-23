@@ -100,8 +100,8 @@ def evaluate_risk(application_data: dict) -> dict:
         score = max(100 - penalty, 0)
         
         contributions = {
-            "dscr_impact": "High" if dscr < 1.25 else "Low",
-            "debt_impact": "High" if debt_to_revenue > 0.8 else "Low"
+            "dscr_impact": 50.0 if dscr < 1.25 else 10.0,
+            "debt_impact": 30.0 if debt_to_revenue > 0.8 else 10.0
         }
 
     category = determine_category(score)
